@@ -2,10 +2,10 @@
 
 var React = require('react');
 var Api = require('../api');
-var LatestPosts = require('../components/latest-posts');
+var PostsList = require('../components/posts-list');
 
 function IndexPage(props) {
-    return <LatestPosts posts={props.posts} />;
+    return <PostsList posts={props.posts} />;
 }
 
 IndexPage.propTypes = {

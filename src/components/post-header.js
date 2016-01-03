@@ -9,7 +9,7 @@ var dateFormat = 'mmm d yyyy @ HH:MM';
 function PostHeader(props) {
     var date = props.date;
     var title = props.isList ? <a href={'/post/' + props.slug}>{props.title}</a> : props.title;
-    var authorLink = props.author && '/authors/' + encodeURIComponent(props.author.name);
+    var authorLink = props.author && '/author/' + encodeURIComponent(props.author.name);
 
     return (
         <header>
@@ -22,7 +22,7 @@ function PostHeader(props) {
                 }
 
                 {props.categories.length > 0 &&
-                    <span> under <InlineList link={'/categories/'} items={props.categories} /></span>
+                    <span> under <InlineList link={'/category'} items={props.categories} /></span>
                 }
             </p>
         </header>

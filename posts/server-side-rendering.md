@@ -1,6 +1,6 @@
 Title: Server-side rendering with React
 Excerpt: Rendering a component tree on the server side can be difficult. In this blog post, we'll talk about why, and some possible solutions to the problem.
-Author: Espen Hovlandsdal <espen@hovlandsdal.com>
+Author: Obi-Wan Kenobi
 Categories:
  - React
  - Backend

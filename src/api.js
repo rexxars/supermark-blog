@@ -55,6 +55,18 @@ Api.getPostBySlug = function(slug, callback) {
     setImmediate(callback, error, error ? null : matches[0]);
 };
 
+Api.getPostsByAuthor = function(author, callback) {
+    setImmediate(callback, null, posts.filter(function(post) {
+        return post.author && post.author.name === author;
+    }));
+};
+
+Api.getPostsByCategory = function(category, callback) {
+    setImmediate(callback, null, posts.filter(function(post) {
+        return post.categories && post.categories.indexOf(category) !== -1;
+    }));
+};
+
 setInterval(fetchDocs, 30000);
 fetchDocs();
 

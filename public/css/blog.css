@@ -49,6 +49,10 @@ h3 {
     font-weight: 300;
     color: rgb(176, 202, 219);
 }
+.brand-title a {
+    color: #fff;
+    text-decoration: none;
+}
 
 .nav-list {
     margin: 0;
