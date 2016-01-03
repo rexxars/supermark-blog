@@ -1,12 +1,19 @@
 'use strict';
 
 var React = require('react');
-var Api = require('../api');
+var PostExcerpt = require('./post-excerpt');
 
 function LatestPostsList(props) {
     return (
-        <ul><li>Latest posts!</li></ul>
+        <div className="main-content posts">
+            <h1 className="content-subhead">Recent Posts</h1>
+            {props.posts.map(PostExcerpt)}
+        </div>
     );
 }
+
+LatestPostsList.propTypes = {
+    posts: React.PropTypes.array.isRequired
+};
 
 module.exports = LatestPostsList;

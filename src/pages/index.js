@@ -1,18 +1,21 @@
 'use strict';
 
 var React = require('react');
+var Api = require('../api');
+var LatestPosts = require('../components/latest-posts');
 
 function IndexPage(props) {
-    return (
-        <div>
-            <h2>Index page, for realz!</h2>
-            <pre>{JSON.stringify(props.some)}</pre>
-        </div>
-    );
+    return <LatestPosts posts={props.posts} />;
 }
 
-IndexPage.dataLoader = function(req, callback) {
-    setImmediate(callback, null, { some: 'loaded data', request: req });
+IndexPage.propTypes = {
+    posts: React.PropTypes.array.isRequired
+};
+
+IndexPage.loadData = function(req, callback) {
+    Api.getLatestPosts({}, function onPostsFetched(err, data) {
+        callback(err, { posts: data });
+    });
 };
 
 module.exports = IndexPage;
