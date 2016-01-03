@@ -8,17 +8,6 @@ function Sidebar() {
             <div className="header">
                 <h1 className="brand-title">A Supermark Blog</h1>
                 <h2 className="brand-tagline">Creating a blog using supermark</h2>
-
-                <nav className="nav">
-                    <ul className="nav-list">
-                        <li className="nav-item">
-                            <a className="pure-button" href="http://purecss.io">Pure</a>
-                        </li>&nbsp;
-                        <li className="nav-item">
-                            <a className="pure-button" href="http://yuilibrary.com">YUI Library</a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </div>
     );

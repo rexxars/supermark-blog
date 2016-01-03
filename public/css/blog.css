@@ -175,10 +175,24 @@ h3 {
 }
 
 /* Custom for supermark */
+body {
+    overflow-y: scroll;
+}
+
 .post-title a {
     color: black;
 }
 
 .main-content {
     max-width: 700px;
+}
+
+.posts code {
+    background: rgba(0,0,0,0.05);
+    padding: 0 3px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.posts pre > code {
+    display: block;
 }

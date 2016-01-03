@@ -41,6 +41,18 @@ Api.getLatestPosts = function getLatestPosts(options, callback) {
     );
 };
 
+Api.getPostBySlug = function(slug, callback) {
+    var matches = posts.filter(function(post) {
+        return post.slug === slug;
+    });
+
+    setImmediate(
+        callback,
+        matches.length === 0 ? new Error('Blog post not found') : null,
+        matches.length > 0 ? matches[0] : null
+    );
+};
+
 setInterval(fetchDocs, 30000);
 fetchDocs();
 
