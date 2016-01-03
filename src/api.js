@@ -33,11 +33,22 @@ function fetchDocs() {
     });
 }
 
+function isVisible(doc) {
+    return !doc.visibility || doc.visibility === 'Public';
+}
+
+function isPublished(doc) {
+    return !doc.status || doc.status === 'Published';
+}
+
 Api.getLatestPosts = function getLatestPosts(options, callback) {
     setImmediate(
         callback,
         null,
-        posts.slice(options.offset || 0, options.limit || 5)
+        posts
+            .slice(options.offset || 0, options.limit || 5)
+            .filter(isPublished)
+            .filter(isVisible)
     );
 };
 
@@ -45,7 +56,7 @@ Api.getPostBySlug = function(slug, callback) {
     var error;
     var matches = posts.filter(function(post) {
         return post.slug === slug;
-    });
+    }).filter(isPublished);
 
     if (matches.length === 0) {
         error = new Error('Blog post not found');
@@ -58,13 +69,13 @@ Api.getPostBySlug = function(slug, callback) {
 Api.getPostsByAuthor = function(author, callback) {
     setImmediate(callback, null, posts.filter(function(post) {
         return post.author && post.author.name === author;
-    }));
+    }).filter(isPublished).filter(isVisible));
 };
 
 Api.getPostsByCategory = function(category, callback) {
     setImmediate(callback, null, posts.filter(function(post) {
         return post.categories && post.categories.indexOf(category) !== -1;
-    }));
+    }).filter(isPublished).filter(isVisible));
 };
 
 setInterval(fetchDocs, 30000);
