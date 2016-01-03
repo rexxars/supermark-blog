@@ -21,7 +21,7 @@ PostPage.propTypes = {
 
 PostPage.loadData = function(req, callback) {
     Api.getPostBySlug(req.params.slug, function onPostFetched(err, data) {
-        callback(err, { post: data });
+        callback(err, { post: data }, data && data.title);
     });
 };
 

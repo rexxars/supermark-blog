@@ -9,7 +9,7 @@ function Layout(props) {
             <head>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Example blog{props.title && ' - ' + props.title}</title>
+                <title>{props.title && props.title + ' - '}Example blog</title>
                 <link rel="stylesheet" href="/css/pure-min.css" />
                 <link rel="stylesheet" href="/css/grids-responsive-min.css" />
                 <link rel="stylesheet" href="/css/blog.css" />

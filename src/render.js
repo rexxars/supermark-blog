@@ -5,9 +5,9 @@ var ReactDom = require('react-dom/server');
 var ErrorPage = require('./pages/error');
 var Layout = require('./components/layout');
 
-function render(Component, title) {
+function render(Component) {
     return function handleRoute(req, res) {
-        function renderAndRespond(err, data) {
+        function renderAndRespond(err, data, title) {
             // If we encounter any errors, render the error page instead
             if (err) {
                 data = { error: err.message };
