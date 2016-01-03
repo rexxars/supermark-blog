@@ -1,0 +1,37 @@
+{
+  "name": "supermark-blog",
+  "version": "0.0.1",
+  "description": "Super simple blog built with Supermark",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index",
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rexxars/supermark-blog.git"
+  },
+  "keywords": [
+    "supermark",
+    "blog"
+  ],
+  "author": "Espen Hovlandsdal <espen@hovlandsdal.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rexxars/supermark-blog/issues"
+  },
+  "homepage": "https://github.com/rexxars/supermark-blog#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "node-jsx": "^0.13.3",
+    "react": "^0.14.5",
+    "react-dom": "^0.14.5",
+    "react-markdown": "^1.2.1",
+    "supermark": "0.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-vaffel": "^4.0.0",
+    "eslint-plugin-react": "^3.13.1"
+  }
+}
