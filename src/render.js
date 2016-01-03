@@ -10,7 +10,7 @@ function render(Component) {
         function renderAndRespond(err, data, title) {
             // If we encounter any errors, render the error page instead
             if (err) {
-                data = { error: err.message };
+                data = { error: err };
                 Component = ErrorPage;
             }
 

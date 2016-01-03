@@ -42,15 +42,17 @@ Api.getLatestPosts = function getLatestPosts(options, callback) {
 };
 
 Api.getPostBySlug = function(slug, callback) {
+    var error;
     var matches = posts.filter(function(post) {
         return post.slug === slug;
     });
 
-    setImmediate(
-        callback,
-        matches.length === 0 ? new Error('Blog post not found') : null,
-        matches.length > 0 ? matches[0] : null
-    );
+    if (matches.length === 0) {
+        error = new Error('Blog post not found');
+        error.code = 404;
+    }
+
+    setImmediate(callback, error, error ? null : matches[0]);
 };
 
 setInterval(fetchDocs, 30000);
